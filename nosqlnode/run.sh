@@ -11,7 +11,7 @@ fi
 docker image inspect nosqlnode:latest > /dev/null 2>&1
 if [ $? -ne 0 ]
 then
-  docker build -t nosqlnode ../
+  docker build -t nosqlnode .
   sleep 10
 fi
 
