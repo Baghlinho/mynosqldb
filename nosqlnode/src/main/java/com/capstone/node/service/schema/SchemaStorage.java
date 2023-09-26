@@ -9,6 +9,6 @@ public interface SchemaStorage {
     Optional<JsonNode> loadSchema(String databaseName);
     // save schema to disk
     void saveSchema(JsonNode schema, String databaseName) ;
-    // delete schema from disk
+    // delete.sh schema from disk
     void deleteSchema(String databaseName);
 }

@@ -25,7 +25,7 @@ public class LockHandler extends QueryHandler {
         }
     }
 
-    private LockService lockService = DatabaseManager.getInstance().getLockService();
+    private final LockService lockService = DatabaseManager.getInstance().getLockService();
 
     @Override
     public void handle(Query query) {
@@ -48,7 +48,6 @@ public class LockHandler extends QueryHandler {
                     return;
                 default:
                     handleSensitive(query);
-                    return;
             }
         } catch (Exception e) {
             e.printStackTrace();

@@ -1,4 +1,4 @@
-package com.capstone.node.api.controller;
+package com.capstone.node.controller;
 
 import com.capstone.node.core.DatabaseManager;
 import com.capstone.node.core.Query;
@@ -27,7 +27,7 @@ public class DatabaseController {
         return request.getRequestOutput().toString();
     }
 
-    @PostMapping("/delete/{database}")
+    @PostMapping("/delete.sh/{database}")
     public String deleteDatabase(@PathVariable("database") String databaseName) {
         Query request = Query.builder()
                 .originator(Query.Originator.User)

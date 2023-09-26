@@ -14,7 +14,7 @@ public interface Index extends Serializable {
     List<String> search(JsonNode key);
     // add a mapping from a value to the document id
     void add(JsonNode key, String documentId);
-    // delete a mapping from a value to a specific document id
+    // delete.sh a mapping from a value to a specific document id
     void delete(JsonNode key, String documentId);
     // check if the index contain the
     boolean contains(JsonNode key);

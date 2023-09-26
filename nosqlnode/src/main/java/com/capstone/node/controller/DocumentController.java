@@ -1,4 +1,4 @@
-package com.capstone.node.api.controller;
+package com.capstone.node.controller;
 
 import com.capstone.node.core.DatabaseManager;
 import com.capstone.node.core.Entry;
@@ -135,7 +135,7 @@ public class DocumentController {
         return request.getRequestOutput().toString();
     }
 
-    @PostMapping(value = "/delete/{database}", consumes = { MediaType.APPLICATION_JSON_VALUE })
+    @PostMapping(value = "/delete.sh/{database}", consumes = { MediaType.APPLICATION_JSON_VALUE })
     public String deleteDocument(@RequestBody Map<String, Object> requestBody, @PathVariable("database") String databaseName) {
         JsonNode json = new ObjectMapper().valueToTree(requestBody);
         Query.QueryBuilder builder = Query

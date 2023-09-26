@@ -1,4 +1,4 @@
-package com.capstone.node.api.filter;
+package com.capstone.node.config;
 
 
 import com.capstone.node.core.DatabaseManager;

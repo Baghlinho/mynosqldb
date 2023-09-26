@@ -39,7 +39,7 @@ public class TrustedPortConfiguration {
 
     private Connector[] additionalConnector() {
 
-        if (StringUtils.isEmpty(this.trustedPort) || "null".equals(trustedPort)) {
+        if (StringUtils.hasLength(trustedPort)) {
             return null;
         }
 
@@ -50,7 +50,7 @@ public class TrustedPortConfiguration {
         if (!defaultPorts.contains(trustedPort)) {
             Connector connector = new Connector("org.apache.coyote.http11.Http11NioProtocol");
             connector.setScheme("http");
-            connector.setPort(Integer.valueOf(trustedPort));
+            connector.setPort(Integer.parseInt(trustedPort));
             return new Connector[]{connector};
         } else {
             return new Connector[]{};
