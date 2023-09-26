@@ -51,7 +51,7 @@ public class CreationHandler extends QueryHandler {
             query.getRequestOutput().append("Database doesn't exist");
             return ;
         }
-        // delete.sh the schema for the database
+        // delete the schema for the database
         storage.deleteSchema(query.getDatabaseName());
         // pass query to next handler
         pass(query);

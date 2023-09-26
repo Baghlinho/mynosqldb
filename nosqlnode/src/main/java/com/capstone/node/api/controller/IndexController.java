@@ -1,4 +1,4 @@
-package com.capstone.node.controller;
+package com.capstone.node.api.controller;
 
 import com.capstone.node.core.DatabaseManager;
 import com.capstone.node.core.Query;
@@ -27,7 +27,7 @@ public class IndexController {
         return request.getRequestOutput().toString();
     }
 
-    @PostMapping("/delete.sh/{database}/{index}")
+    @PostMapping("/delete/{database}/{index}")
     public String deleteIndex(@PathVariable("database") String databaseName, @PathVariable("index") String indexFieldName) {
         Query request = Query.builder()
                 .originator(Query.Originator.User)

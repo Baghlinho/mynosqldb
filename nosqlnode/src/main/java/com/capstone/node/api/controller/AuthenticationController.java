@@ -1,4 +1,4 @@
-package com.capstone.node.controller;
+package com.capstone.node.api.controller;
 
 import com.capstone.node.core.Query;
 import com.capstone.node.core.User;
