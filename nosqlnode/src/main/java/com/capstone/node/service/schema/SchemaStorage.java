@@ -1,0 +1,14 @@
+package com.capstone.node.service.schema;
+
+import com.fasterxml.jackson.databind.JsonNode;
+
+import java.util.Optional;
+
+public interface SchemaStorage {
+    // load schema from disk
+    Optional<JsonNode> loadSchema(String databaseName);
+    // save schema to disk
+    void saveSchema(JsonNode schema, String databaseName) ;
+    // delete.sh schema from disk
+    void deleteSchema(String databaseName);
+}

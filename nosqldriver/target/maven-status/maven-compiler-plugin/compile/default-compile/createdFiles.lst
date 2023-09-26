@@ -1,0 +1,15 @@
+com\capstone\driver\core\JsonType.class
+com\capstone\driver\operation\AuthOperations.class
+com\capstone\driver\client\DatabaseClient.class
+com\capstone\driver\core\Role.class
+com\capstone\driver\client\RestClient.class
+com\capstone\driver\core\RequestSender.class
+com\capstone\driver\client\IndexClient.class
+com\capstone\driver\client\DocumentClient.class
+com\capstone\driver\MyNoSQLDriver.class
+com\capstone\driver\client\AuthClient.class
+com\capstone\driver\core\Schema.class
+com\capstone\driver\core\JsonBody.class
+com\capstone\driver\operation\DatabaseOperations.class
+com\capstone\driver\operation\DocumentOperations.class
+com\capstone\driver\operation\IndexOperations.class
