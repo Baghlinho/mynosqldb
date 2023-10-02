@@ -1,7 +1,8 @@
-package com.capstone.node.handler;
+package com.capstone.node.handler.register;
 
 import com.capstone.node.core.DatabaseManager;
 import com.capstone.node.core.Node;
+import com.capstone.node.handler.QueryHandler;
 import com.capstone.node.service.database.Database;
 import com.capstone.node.core.Query;
 import com.fasterxml.jackson.databind.JsonNode;

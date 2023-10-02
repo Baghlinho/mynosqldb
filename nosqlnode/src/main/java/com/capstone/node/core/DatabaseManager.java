@@ -1,7 +1,7 @@
 package com.capstone.node.core;
 
 import com.capstone.node.handler.QueryHandler;
-import com.capstone.node.handler.RegisterHandler;
+import com.capstone.node.handler.register.RegisterHandler;
 import com.capstone.node.service.cache.CacheService;
 import com.capstone.node.service.database.DatabaseService;
 import com.capstone.node.service.index.IndexService;

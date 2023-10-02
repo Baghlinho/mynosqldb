@@ -27,7 +27,7 @@ public class DatabaseController {
         return request.getRequestOutput().toString();
     }
 
-    @PostMapping("/delete.sh/{database}")
+    @PostMapping("/delete/{database}")
     public String deleteDatabase(@PathVariable("database") String databaseName) {
         Query request = Query.builder()
                 .originator(Query.Originator.User)

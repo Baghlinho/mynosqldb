@@ -1,5 +1,6 @@
-package com.capstone.node.handler;
+package com.capstone.node.handler.cache;
 
+import com.capstone.node.handler.QueryHandler;
 import com.capstone.node.service.cache.Cache;
 import com.capstone.node.service.cache.CacheEntry;
 import com.capstone.node.service.cache.CacheService;
@@ -51,7 +52,6 @@ public class CacheHandler extends QueryHandler {
                     return;
                 default:
                     pass(query);
-                    return;
             }
         } catch (Exception e) {
             e.printStackTrace();

@@ -1,6 +1,6 @@
-package com.capstone.node.handler;
+package com.capstone.node.handler.index;
 
-import com.capstone.node.handler.schema.SchemaHandlers;
+import com.capstone.node.handler.QueryHandler;
 import com.capstone.node.core.Query;
 
 import java.io.IOException;
@@ -9,9 +9,9 @@ import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class SchemaHandler extends QueryHandler {
+public class IndexHandler extends QueryHandler {
 
-    private static final Logger logger = Logger.getLogger(SchemaHandler.class.getName());
+    private static final Logger logger = Logger.getLogger(IndexHandler.class.getName());
 
     static {
         try {
@@ -26,8 +26,8 @@ public class SchemaHandler extends QueryHandler {
     @Override
     public void handle(Query query) {
         try {
-            Optional<QueryHandler> handler = SchemaHandlers.getHandlers(query, nextHandler);
-            if(handler.isPresent())
+            Optional<QueryHandler> handler = IndexHandlers.getHandler(query, nextHandler);
+            if (handler.isPresent())
                 handler.get().handle(query);
             else
                 pass(query);

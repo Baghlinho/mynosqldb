@@ -3,7 +3,7 @@ package com.capstone.node.service.index;
 import com.capstone.node.core.DatabaseManager;
 import com.capstone.node.core.MetaData;
 import com.capstone.node.service.database.DatabaseService;
-import com.capstone.node.handler.IndexHandler;
+import com.capstone.node.handler.index.IndexHandler;
 import com.capstone.node.handler.QueryHandler;
 
 import java.io.*;

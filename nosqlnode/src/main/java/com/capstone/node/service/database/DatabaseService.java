@@ -2,7 +2,7 @@ package com.capstone.node.service.database;
 
 import com.capstone.node.core.DatabaseManager;
 import com.capstone.node.core.MetaData;
-import com.capstone.node.handler.DatabaseHandler;
+import com.capstone.node.handler.database.DatabaseHandler;
 import com.capstone.node.handler.QueryHandler;
 
 import java.io.*;

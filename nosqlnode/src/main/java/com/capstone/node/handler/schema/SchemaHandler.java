@@ -1,17 +1,17 @@
-package com.capstone.node.handler;
+package com.capstone.node.handler.schema;
 
-import com.capstone.node.handler.broadcast.BroadcastHandlers;
+import com.capstone.node.handler.QueryHandler;
 import com.capstone.node.core.Query;
 
 import java.io.IOException;
+import java.util.Optional;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+public class SchemaHandler extends QueryHandler {
 
-public class BroadcastHandler extends QueryHandler {
-
-    private static final Logger logger = Logger.getLogger(BroadcastHandler.class.getName());
+    private static final Logger logger = Logger.getLogger(SchemaHandler.class.getName());
 
     static {
         try {
@@ -26,8 +26,11 @@ public class BroadcastHandler extends QueryHandler {
     @Override
     public void handle(Query query) {
         try {
-            QueryHandler handler = BroadcastHandlers.getHandler(query, nextHandler);
-            handler.handle(query);
+            Optional<QueryHandler> handler = SchemaHandlers.getHandlers(query, nextHandler);
+            if(handler.isPresent())
+                handler.get().handle(query);
+            else
+                pass(query);
         } catch (Exception e) {
             e.printStackTrace();
             query.setStatus(Query.Status.Rejected);

@@ -1,7 +1,7 @@
 package com.capstone.node.service.cache;
 
 import com.capstone.node.core.MetaData;
-import com.capstone.node.handler.CacheHandler;
+import com.capstone.node.handler.cache.CacheHandler;
 import com.capstone.node.handler.QueryHandler;
 
 import java.io.IOException;

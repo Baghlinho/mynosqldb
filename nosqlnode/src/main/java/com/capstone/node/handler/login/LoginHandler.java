@@ -1,7 +1,8 @@
-package com.capstone.node.handler;
+package com.capstone.node.handler.login;
 
 import com.capstone.node.core.DatabaseManager;
 import com.capstone.node.core.User;
+import com.capstone.node.handler.QueryHandler;
 import com.capstone.node.service.database.Database;
 import com.capstone.node.service.index.Index;
 import com.capstone.node.service.index.IndexKey;
@@ -47,6 +48,7 @@ public class LoginHandler extends QueryHandler {
             }
         } catch (Exception e) {
             e.printStackTrace();
+//            logger.log(Level.SEVERE, e.getMessage(), e);
             query.setStatus(Query.Status.Rejected);
             query.getRequestOutput().append(e.getMessage());
             logger.warning(e.getMessage());
@@ -62,7 +64,6 @@ public class LoginHandler extends QueryHandler {
         JsonNode username = credentials.get("username");
         String password = credentials.get("password").asText();
 
-        // no user in the database
         if(!usernameIndex.contains(username))
             return Optional.empty();
 
@@ -76,9 +77,7 @@ public class LoginHandler extends QueryHandler {
                 User.getRole(json.get("role").asText()),
                 json.get("nodeId").asInt());
 
-        // user is assigned to this node
         if(user.getNodeId() == manager.getConfiguration().getNodeId()
-                // password matches
                 && BCrypt.checkpw(password, user.getPasswordHash()))
             return Optional.of(user);
 

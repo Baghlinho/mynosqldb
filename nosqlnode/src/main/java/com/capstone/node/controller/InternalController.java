@@ -85,13 +85,14 @@ public class InternalController {
     }
 
     @PostMapping("/create_index/{database}/{index}")
-    public String createIndex(@PathVariable("database") String database, @PathVariable("index") String index) {
+    public String createIndex(@PathVariable("database") String database,
+                              @PathVariable("index") String index) {
         return indexHelper(database, index, QueryType.CreateIndex);
     }
 
     @PostMapping("/delete_index/{database}/{index}")
     public String deleteIndex(@PathVariable("database") String database,
-            @PathVariable("index") String index) {
+                              @PathVariable("index") String index) {
         return indexHelper(database, index, QueryType.DeleteIndex);
     }
 

@@ -1,7 +1,7 @@
-package com.capstone.node.handler;
+package com.capstone.node.handler.database;
 
+import com.capstone.node.handler.QueryHandler;
 import com.capstone.node.service.database.DatabaseService;
-import com.capstone.node.handler.database.DatabaseHandlers;
 import com.capstone.node.core.Query;
 import com.capstone.node.core.QueryType;
 

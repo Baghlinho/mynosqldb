@@ -37,7 +37,6 @@ public class SimpleBroadcast extends QueryHandler {
                 return;
             case RegisterUser:
                 registerUser(query);
-                return;
         }
     }
 

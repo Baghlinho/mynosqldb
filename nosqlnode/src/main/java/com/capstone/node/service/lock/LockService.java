@@ -1,7 +1,7 @@
 package com.capstone.node.service.lock;
 
 import com.capstone.node.core.MetaData;
-import com.capstone.node.handler.LockHandler;
+import com.capstone.node.handler.lock.LockHandler;
 import com.capstone.node.handler.QueryHandler;
 
 import java.io.IOException;
@@ -31,7 +31,7 @@ public class LockService {
     private void createInitialLocks(MetaData metaData) {
         metaData
                 .getDatabasesNames()
-                .forEach(name -> createLock(name));
+                .forEach(this::createLock);
     }
 
     public void createLock(String databaseName) {

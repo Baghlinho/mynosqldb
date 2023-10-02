@@ -68,7 +68,7 @@ public class DocumentHandler extends QueryHandler {
         JsonNode schema = storage.loadSchema(query.getDatabaseName()).get();
         if(!validator.validatePartialDocument(schema, query.getPayload())) {
             query.setStatus(Query.Status.Rejected);
-            query.getRequestOutput().append("Document updates doesn't conform to the database schema");
+            query.getRequestOutput().append("Document updates don't conform to the database schema");
             return;
         }
         pass(query);

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 num_nodes=$1
-
+pwd
 if [[ ! $num_nodes =~ ^[1-9][0-9]*$ ]]
 then
   echo "Number of nodes should be a positive integer"
@@ -11,7 +11,7 @@ fi
 docker image inspect nosqlnode:latest > /dev/null 2>&1
 if [ $? -ne 0 ]
 then
-  docker build -t nosqlnode .
+  docker build -t nosqlnode ..
   sleep 10
 fi
 

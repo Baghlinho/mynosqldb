@@ -56,7 +56,6 @@ public class DirectoryDatabase extends Database {
         } catch (FileNotFoundException e) {
             /*Shouldn't happen as the file is created up*/
             e.printStackTrace();
-            return;
         }
     }
 

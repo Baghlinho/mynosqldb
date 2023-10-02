@@ -1,6 +1,7 @@
-package com.capstone.node.handler;
+package com.capstone.node.handler.lock;
 
 import com.capstone.node.core.DatabaseManager;
+import com.capstone.node.handler.QueryHandler;
 import com.capstone.node.service.lock.LockService;
 import com.capstone.node.core.Query;
 import com.capstone.node.core.QueryType;
@@ -25,7 +26,7 @@ public class LockHandler extends QueryHandler {
         }
     }
 
-    private final LockService lockService = DatabaseManager.getInstance().getLockService();
+    private LockService lockService = DatabaseManager.getInstance().getLockService();
 
     @Override
     public void handle(Query query) {
@@ -76,9 +77,7 @@ public class LockHandler extends QueryHandler {
         try {
             globalLock.lock();
             lock.lock();
-
             pass(request);
-
         } finally {
             globalLock.unlock();
             lock.unlock();

@@ -3,6 +3,11 @@ package com.capstone.node.handler;
 import com.capstone.node.core.Query;
 import com.capstone.node.core.QueryType;
 import com.capstone.node.core.DatabaseManager;
+import com.capstone.node.handler.broadcast.BroadcastHandler;
+import com.capstone.node.handler.login.LoginHandler;
+import com.capstone.node.handler.register.RegisterHandler;
+import com.capstone.node.handler.schema.SchemaHandler;
+
 import java.util.Arrays;
 
 public class HandlerFactory {
@@ -15,14 +20,14 @@ public class HandlerFactory {
             case Broadcaster:
                 return getBroadcastHandler(query);
             case Deferrer:
-                return getDeferrerHandler(query);
+                return getDeferrerHandler();
             case SelfUpdate:
-                return getSelfUpdateHandler(query);
+                return getSelfUpdateHandler();
         }
         return null;
     }
 
-    private QueryHandler getSelfUpdateHandler(Query query) {
+    private QueryHandler getSelfUpdateHandler() {
         QueryHandler handlerChain = manager.getCacheService().getHandler();
         handlerChain
                 .setNext(manager.getIndexService().getHandler())
@@ -33,7 +38,6 @@ public class HandlerFactory {
     private QueryHandler getUserHandler(Query request) {
         QueryHandler handlerChain = manager.getLockService().getHandler();
 
-        // case of a login request
         if(request.getQueryType() == QueryType.Login) {
             handlerChain.setNext(new LoginHandler());
             return handlerChain;
@@ -48,7 +52,6 @@ public class HandlerFactory {
             return handlerChain;
         }
 
-        // case of creating of deleting indexes
         if(oneOf(request, QueryType.CreateIndex, QueryType.DeleteIndex)) {
             handlerChain
                     .setNext(manager.getCacheService().getHandler())
@@ -68,7 +71,6 @@ public class HandlerFactory {
     private QueryHandler getBroadcastHandler(Query query) {
         QueryHandler handlerChain = manager.getLockService().getHandler();
 
-        // case of creating of deleting indexes
         if(oneOf(query, QueryType.CreateIndex, QueryType.DeleteIndex)) {
             handlerChain
                     .setNext(manager.getCacheService().getHandler())
@@ -83,7 +85,7 @@ public class HandlerFactory {
         return handlerChain;
     }
 
-    private QueryHandler getDeferrerHandler(Query query) {
+    private QueryHandler getDeferrerHandler() {
         QueryHandler handlerChain = manager.getLockService().getHandler();
         handlerChain
                 .setNext(manager.getCacheService().getHandler())

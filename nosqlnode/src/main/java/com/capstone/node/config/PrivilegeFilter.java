@@ -19,7 +19,7 @@ public class PrivilegeFilter implements Filter {
         HttpServletResponse resp = (HttpServletResponse) response;
         String url = req.getRequestURI();
 
-        // user trying to create or delete.sh databases and indexes must be admin
+        // user trying to create or delete databases and indexes must be admin
         if(url.startsWith("/database") || url.startsWith("/index")) {
             User user = (User) req.getSession(false).getAttribute("user");
             if(user == null || user.getRole() != User.Role.Admin) {
@@ -29,7 +29,7 @@ public class PrivilegeFilter implements Filter {
         }
 
         // user trying to modify data must be admin or editor
-        if(url.startsWith("/document/add") || url.startsWith("/document/delete.sh") || url.startsWith("/document/update")) {
+        if(url.startsWith("/document/add") || url.startsWith("/document/delete") || url.startsWith("/document/update")) {
             User user = (User) req.getSession(false).getAttribute("user");
             if(user == null || user.getRole() == User.Role.Viewer) {
                 resp.setStatus(HttpServletResponse.SC_FORBIDDEN);
