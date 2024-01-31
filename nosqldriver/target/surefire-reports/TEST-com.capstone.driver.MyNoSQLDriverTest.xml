@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.capstone.driver.MyNoSQLDriverTest" time="0.737" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.capstone.driver.MyNoSQLDriverTest" time="0.731" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="19"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="C:\Users\fifoa\.jdks\azul-19.0.2\bin"/>
-    <property name="sun.java.command" value="C:\Users\fifoa\AppData\Local\Temp\surefire4731419901582049603\surefirebooter-20230926132732561_3.jar C:\Users\fifoa\AppData\Local\Temp\surefire4731419901582049603 2023-09-26T13-27-32_438-jvmRun1 surefire-20230926132732561_1tmp surefire_0-20230926132732561_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\fifoa\AppData\Local\Temp\surefire5330125497541365834\surefirebooter-20231002110856972_3.jar C:\Users\fifoa\AppData\Local\Temp\surefire5330125497541365834 2023-10-02T11-08-56_845-jvmRun1 surefire-20231002110856972_1tmp surefire_0-20231002110856972_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\fifoa\IdeaProjects\mynosqldb\nosqldriver\target\test-classes;C:\Users\fifoa\IdeaProjects\mynosqldb\nosqldriver\target\classes;C:\Users\fifoa\.m2\repository\org\json\json\20230618\json-20230618.jar;C:\Users\fifoa\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\fifoa\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\fifoa\AppData\Local\Temp\surefire4731419901582049603\surefirebooter-20230926132732561_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\fifoa\AppData\Local\Temp\surefire5330125497541365834\surefirebooter-20231002110856972_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="19.0.2+7"/>
@@ -60,7 +60,7 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="63.0"/>
   </properties>
-  <testcase name="operations" classname="com.capstone.driver.MyNoSQLDriverTest" time="0.697">
+  <testcase name="operations" classname="com.capstone.driver.MyNoSQLDriverTest" time="0.692">
     <system-out><![CDATA[{"test_prop":"test_val_updated"}
 []
 ]]></system-out>

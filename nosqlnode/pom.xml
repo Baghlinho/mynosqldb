@@ -14,7 +14,7 @@
 	<name>nosqlnode</name>
 	<description>Document NoSQL Cluster Database</description>
 	<properties>
-		<java.version>1.8</java.version>
+		<java.version>19</java.version>
 		<snakeyaml.version>2.1</snakeyaml.version>
 	</properties>
 	<dependencies>
